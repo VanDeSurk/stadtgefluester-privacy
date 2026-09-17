@@ -1,0 +1,237 @@
+<title>Stadtgeflüster Nutzungsbedingungen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #f5f6f3;
+    --surface: #ffffff;
+    --text: #20241f;
+    --text-muted: #5b655c;
+    --rule: #dcdfd8;
+    --accent: #2f6b5e;
+    --accent-soft: #e4eeea;
+    --gold: #a8823d;
+    --gold-soft: #f3ead8;
+    --warn-bg: #fbf1e3;
+    --warn-border: #dfc48f;
+    --warn-text: #6b4c14;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141815;
+      --surface: #1b201c;
+      --text: #e8ebe6;
+      --text-muted: #a3ac9f;
+      --rule: #333a34;
+      --accent: #7cc2ae;
+      --accent-soft: #223330;
+      --gold: #d5ab68;
+      --gold-soft: #2e2818;
+      --warn-bg: #2e2818;
+      --warn-border: #6b5324;
+      --warn-text: #f0cf8f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141815;
+    --surface: #1b201c;
+    --text: #e8ebe6;
+    --text-muted: #a3ac9f;
+    --rule: #333a34;
+    --accent: #7cc2ae;
+    --accent-soft: #223330;
+    --gold: #d5ab68;
+    --gold-soft: #2e2818;
+    --warn-bg: #2e2818;
+    --warn-border: #6b5324;
+    --warn-text: #f0cf8f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 0 16px;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-block: 48px 80px;
+  }
+
+  header.doc-head { margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 40px);
+    margin: 8px 0 6px;
+    text-wrap: balance;
+  }
+  .subtitle { color: var(--text-muted); font-size: 15px; max-width: 60ch; }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 18px;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);
+  }
+
+  .draft-notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    margin: 28px 0 40px;
+  }
+  .draft-notice strong { display: block; margin-bottom: 4px; font-family: var(--font-body); }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 48px;
+  }
+  nav.toc .toc-label {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;
+  }
+  nav.toc ol { columns: 2; column-gap: 24px; margin: 0; padding-left: 0; list-style: none; }
+  nav.toc li { break-inside: avoid; margin-bottom: 6px; }
+  nav.toc a { color: var(--text); text-decoration: none; font-size: 14px; }
+  nav.toc a:hover { color: var(--accent); }
+  nav.toc .n { font-family: var(--font-mono); color: var(--accent); margin-right: 6px; }
+
+  section.clause {
+    padding-block: 28px;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 20px;
+  }
+  section.clause:first-of-type { border-top: none; padding-top: 0; }
+
+  .clause-num {
+    font-family: var(--font-mono); font-size: 13px; color: var(--gold);
+    display: block; margin-bottom: 6px;
+  }
+  h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 22px;
+    margin: 0 0 14px; text-wrap: balance;
+  }
+  p { margin: 0 0 12px; max-width: 68ch; }
+  ul { margin: 0 0 12px; padding-left: 20px; max-width: 66ch; }
+  li { margin-bottom: 6px; }
+
+  footer.doc-foot {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--rule);
+    color: var(--text-muted); font-size: 13px;
+  }
+
+  @media (max-width: 520px) {
+    nav.toc ol { columns: 1; }
+  }
+</style>
+
+<div class="page">
+  <header class="doc-head">
+    <div class="eyebrow">Nutzungsbedingungen</div>
+    <h1>Stadtgeflüster</h1>
+    <p class="subtitle">Diese Bedingungen gelten, sobald du eigene Inhalte in Stadtgeflüster hinzufügst — eigene Sehenswürdigkeiten, Veranstaltungen oder Beiträge zu bestehenden Sehenswürdigkeiten.</p>
+    <div class="meta-row">
+      <span>Stand: 17. September 2026</span>
+      <span>Version: 2026-09-17</span>
+      <span>Gilt für: iOS- und Android-App "Stadtgeflüster"</span>
+    </div>
+  </header>
+
+  <div class="draft-notice">
+    <strong>Hinweis zu diesem Entwurf</strong>
+    Dieser Text ist auf Basis der tatsächlichen Funktionsweise der App erstellt, ersetzt aber keine Rechtsberatung. Siehe auch die separate <a href="/" style="color: var(--warn-text);">Datenschutzerklärung</a> und das <a href="/impressum.html" style="color: var(--warn-text);">Impressum</a>.
+  </div>
+
+  <nav class="toc" aria-label="Inhaltsübersicht">
+    <div class="toc-label">Inhalt</div>
+    <ol>
+      <li><a href="#geltungsbereich"><span class="n">1</span>Geltungsbereich</a></li>
+      <li><a href="#voraussetzungen"><span class="n">2</span>Voraussetzungen</a></li>
+      <li><a href="#deine-verantwortung"><span class="n">3</span>Deine Verantwortung</a></li>
+      <li><a href="#nutzungsrecht"><span class="n">4</span>Nutzungsrecht an deinen Inhalten</a></li>
+      <li><a href="#moderation"><span class="n">5</span>Moderation &amp; Meldewesen</a></li>
+      <li><a href="#entfernung"><span class="n">6</span>Entfernung von Inhalten</a></li>
+      <li><a href="#haftung"><span class="n">7</span>Haftung</a></li>
+      <li><a href="#aenderungen"><span class="n">8</span>Änderungen</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="geltungsbereich">
+    <span class="clause-num">§ 1</span>
+    <h2>Geltungsbereich</h2>
+    <p>Diese Nutzungsbedingungen regeln, wie du eigene Inhalte in Stadtgeflüster hinzufügen darfst: eigene Sehenswürdigkeiten, Veranstaltungen und Beiträge zu bestehenden Sehenswürdigkeiten (Text, Fotos, Sprachaufnahmen). Das reine Ansehen der App und ihrer offiziellen Inhalte erfordert keine Zustimmung zu diesen Bedingungen.</p>
+    <p>Welche Daten dabei technisch verarbeitet werden, beschreibt die <a href="/">Datenschutzerklärung</a> — dieses Dokument regelt zusätzlich, was inhaltlich von dir erwartet wird und welche Rechte du dem Betreiber an deinen Inhalten einräumst.</p>
+  </section>
+
+  <section class="clause" id="voraussetzungen">
+    <span class="clause-num">§ 2</span>
+    <h2>Voraussetzungen</h2>
+    <p>Eigene Inhalte darfst du erst hinzufügen, nachdem du diesen Bedingungen einmalig zugestimmt hast. Die App fragt das vor dem ersten Anlegen einer eigenen Sehenswürdigkeit ab und speichert deine Zustimmung serverseitig, verknüpft mit der zufälligen Gerätekennung deines Geräts (siehe Datenschutzerklärung, § 5) — nicht mit deinem Namen oder einer E-Mail-Adresse.</p>
+    <p>Nutzer unter 16 Jahren sollten eigene Inhalte nur mit Zustimmung der Erziehungsberechtigten hinzufügen.</p>
+  </section>
+
+  <section class="clause" id="deine-verantwortung">
+    <span class="clause-num">§ 3</span>
+    <h2>Deine Verantwortung für eigene Inhalte</h2>
+    <p>Du bist für alles verantwortlich, was du hinzufügst. Insbesondere darfst du keine Inhalte teilen, die:</p>
+    <ul>
+      <li>Rechte Dritter verletzen (Urheberrecht, Recht am eigenen Bild erkennbarer Personen, Persönlichkeitsrechte);</li>
+      <li>nachweislich falsche Tatsachenbehauptungen über Personen oder Orte enthalten;</li>
+      <li>beleidigend, diskriminierend oder auf sonstige Weise rechtswidrig sind;</li>
+      <li>nicht tatsächlich von dir stammen oder zu deren Teilen du nicht berechtigt bist (z. B. fremde Fotos ohne Erlaubnis).</li>
+    </ul>
+    <p>Der Betreiber prüft neue Inhalte vor Veröffentlichung nicht redaktionell — die automatische Themen-Einordnung (siehe Datenschutzerklärung, § 8) ersetzt keine inhaltliche Kontrolle. Die Verantwortung für die Richtigkeit und Rechtmäßigkeit liegt bei dir als Ersteller.</p>
+  </section>
+
+  <section class="clause" id="nutzungsrecht">
+    <span class="clause-num">§ 4</span>
+    <h2>Nutzungsrecht an deinen Inhalten</h2>
+    <p>Mit dem Hinzufügen räumst du dem Betreiber das einfache, nicht-exklusive Recht ein, deine Inhalte auf dem Server zu speichern und anderen Nutzern der App anzuzeigen — das ist der eigentliche Zweck des Teilens. Du bleibst Inhaber deiner Rechte an eigenen Texten, Fotos und Aufnahmen und kannst sie jederzeit über die App wieder löschen (siehe Datenschutzerklärung, § 13); die Einräumung des Nutzungsrechts endet damit ebenfalls.</p>
+  </section>
+
+  <section class="clause" id="moderation">
+    <span class="clause-num">§ 5</span>
+    <h2>Moderation &amp; Meldewesen</h2>
+    <p>Andere Nutzer können deine Inhalte bewerten oder als unangemessen melden. Eine Meldung löst eine automatisierte Prüfung auf offensichtlich unangemessene Inhalte aus (siehe Datenschutzerklärung, § 8). Der Betreiber behält sich vor, gemeldete oder ihm anderweitig bekannt gewordene rechtswidrige Inhalte ohne Vorankündigung zu entfernen.</p>
+  </section>
+
+  <section class="clause" id="entfernung">
+    <span class="clause-num">§ 6</span>
+    <h2>Entfernung von Inhalten</h2>
+    <p>Neben der Entfernung einzelner Inhalte kann der Betreiber in begründeten Fällen (z. B. wiederholte oder schwerwiegende Verstöße gegen § 3) auch alle Inhalte eines Geräts entfernen. Offizielle, vom Tourismusbüro/Heimatverein eingepflegte Inhalte sind hiervon nicht betroffen.</p>
+  </section>
+
+  <section class="clause" id="haftung">
+    <span class="clause-num">§ 7</span>
+    <h2>Haftung</h2>
+    <p>Für fremde Inhalte (Inhalte, die andere Nutzer hinzugefügt haben) haftet der Betreiber nur im Rahmen der gesetzlichen Vorgaben für Hostinganbieter (Art. 6 Digital Services Act) — also insbesondere dann, wenn er von einer konkreten Rechtsverletzung Kenntnis erlangt und nicht unverzüglich handelt. Für die inhaltliche Richtigkeit nutzergenerierter Beschreibungen historischer oder kultureller Sachverhalte wird keine Gewähr übernommen.</p>
+  </section>
+
+  <section class="clause" id="aenderungen">
+    <span class="clause-num">§ 8</span>
+    <h2>Änderungen dieser Nutzungsbedingungen</h2>
+    <p>Bei wesentlichen Änderungen wird die Versionsnummer oben angepasst; die App fragt deine Zustimmung dann vor dem nächsten Hinzufügen eigener Inhalte erneut ab. Die jeweils aktuelle Fassung ist über diese Seite abrufbar.</p>
+  </section>
+
+  <footer class="doc-foot">
+    Stadtgeflüster — Nutzungsbedingungen, Entwurfsstand 17.09.2026.
+  </footer>
+</div>
