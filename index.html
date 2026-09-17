@@ -1,0 +1,420 @@
+<title>Stadtgeflüster Datenschutz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #f5f6f3;
+    --surface: #ffffff;
+    --text: #20241f;
+    --text-muted: #5b655c;
+    --rule: #dcdfd8;
+    --accent: #2f6b5e;
+    --accent-soft: #e4eeea;
+    --gold: #a8823d;
+    --gold-soft: #f3ead8;
+    --warn-bg: #fbf1e3;
+    --warn-border: #dfc48f;
+    --warn-text: #6b4c14;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141815;
+      --surface: #1b201c;
+      --text: #e8ebe6;
+      --text-muted: #a3ac9f;
+      --rule: #333a34;
+      --accent: #7cc2ae;
+      --accent-soft: #223330;
+      --gold: #d5ab68;
+      --gold-soft: #2e2818;
+      --warn-bg: #2e2818;
+      --warn-border: #6b5324;
+      --warn-text: #f0cf8f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141815;
+    --surface: #1b201c;
+    --text: #e8ebe6;
+    --text-muted: #a3ac9f;
+    --rule: #333a34;
+    --accent: #7cc2ae;
+    --accent-soft: #223330;
+    --gold: #d5ab68;
+    --gold-soft: #2e2818;
+    --warn-bg: #2e2818;
+    --warn-border: #6b5324;
+    --warn-text: #f0cf8f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 0 16px;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-block: 48px 80px;
+  }
+
+  header.doc-head {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 40px);
+    margin: 8px 0 6px;
+    text-wrap: balance;
+  }
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 60ch;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .draft-notice {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    margin: 28px 0 40px;
+  }
+  .draft-notice strong { display: block; margin-bottom: 4px; font-family: var(--font-body); }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 48px;
+  }
+  nav.toc .toc-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  nav.toc ol {
+    columns: 2;
+    column-gap: 24px;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 6px; }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav.toc a:hover { color: var(--accent); }
+  nav.toc .n {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  section.clause {
+    padding-block: 28px;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 20px;
+  }
+  section.clause:first-of-type { border-top: none; padding-top: 0; }
+
+  .clause-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 20px 0 8px;
+  }
+  p { margin: 0 0 12px; max-width: 68ch; }
+  ul, ol.plain { margin: 0 0 12px; padding-left: 20px; max-width: 66ch; }
+  li { margin-bottom: 6px; }
+
+  .fact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 18px;
+    font-size: 14px;
+  }
+  .fact-table th, .fact-table td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .fact-table th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .fact-table-wrap { overflow-x: auto; }
+
+  .pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .pill.local { background: var(--gold-soft); color: var(--gold); }
+
+  .fill-in {
+    background: var(--gold-soft);
+    border: 1px dashed var(--gold);
+    color: var(--warn-text);
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  footer.doc-foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 520px) {
+    nav.toc ol { columns: 1; }
+  }
+</style>
+
+<div class="page">
+  <header class="doc-head">
+    <div class="eyebrow">Datenschutzerklärung</div>
+    <h1>Stadtgeflüster</h1>
+    <p class="subtitle">Diese Erklärung beschreibt, welche Daten die App "Stadtgeflüster" verarbeitet, wenn du Sehenswürdigkeiten in Bocholt, Dinxperlo und Umgebung entdeckst oder eigene Beiträge teilst.</p>
+    <div class="meta-row">
+      <span>Stand: 17. September 2026</span>
+      <span>Gilt für: iOS- und Android-App "Stadtgeflüster"</span>
+    </div>
+  </header>
+
+  <div class="draft-notice">
+    <strong>Hinweis zu diesem Entwurf</strong>
+    Dieser Text ist auf Basis der tatsächlichen Funktionsweise der App erstellt (Quellcode-Analyse, Stand 17.09.2026), ersetzt aber keine Rechtsberatung. Die Angaben zum Verantwortlichen (§ 1) sind ausgefüllt — vor Veröffentlichung trotzdem im Zweifel juristisch prüfen lassen, insbesondere wenn die App über NRW/Deutschland hinaus (z. B. für Dinxperlo/Niederlande) beworben wird.
+  </div>
+
+  <nav class="toc" aria-label="Inhaltsübersicht">
+    <div class="toc-label">Inhalt</div>
+    <ol>
+      <li><a href="#verantwortlicher"><span class="n">1</span>Verantwortlicher</a></li>
+      <li><a href="#uebersicht"><span class="n">2</span>Übersicht der Datenarten</a></li>
+      <li><a href="#standort"><span class="n">3</span>Standortdaten</a></li>
+      <li><a href="#eigene-sights"><span class="n">4</span>Eigene Sehenswürdigkeiten</a></li>
+      <li><a href="#geraetekennung"><span class="n">5</span>Gerätekennung</a></li>
+      <li><a href="#bewertungen"><span class="n">6</span>Bewertungen &amp; Meldungen</a></li>
+      <li><a href="#ki"><span class="n">7</span>KI-Einordnung &amp; Moderation</a></li>
+      <li><a href="#feedback"><span class="n">8</span>Feedback-Formular</a></li>
+      <li><a href="#empfaenger"><span class="n">9</span>Empfänger &amp; Dritte</a></li>
+      <li><a href="#speicherdauer"><span class="n">10</span>Speicherdauer</a></li>
+      <li><a href="#rechte"><span class="n">11</span>Deine Rechte</a></li>
+      <li><a href="#widerruf"><span class="n">12</span>Widerruf &amp; Löschung</a></li>
+      <li><a href="#kinder"><span class="n">13</span>Minderjährige</a></li>
+      <li><a href="#aenderungen"><span class="n">14</span>Änderungen</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="verantwortlicher">
+    <span class="clause-num">§ 1</span>
+    <h2>Verantwortlicher</h2>
+    <p>Verantwortlich für die Datenverarbeitung im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+    <p>
+      Patrick Schweers<br>
+      Lange Fohre 4, 46399 Bocholt<br>
+      p.s.schweers@gmail.com
+    </p>
+    <p>Die App wird als Einzelprojekt betrieben; ein eigener Server im Besitz des Verantwortlichen speichert alle in dieser Erklärung genannten Inhalte — es gibt keine Weitergabe an ein Drittunternehmen zur Auswertung.</p>
+  </section>
+
+  <section class="clause" id="uebersicht">
+    <span class="clause-num">§ 2</span>
+    <h2>Übersicht der Datenarten</h2>
+    <p>Die App funktioniert grundsätzlich ohne Konto, Anmeldung oder Klarnamen. Die folgende Tabelle fasst zusammen, was verarbeitet wird und wo es verbleibt — Details in den jeweiligen Abschnitten.</p>
+    <div class="fact-table-wrap">
+      <table class="fact-table">
+        <thead>
+          <tr><th>Datenart</th><th>Verbleib</th><th>Zweck</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Standort (GPS)</td><td><span class="pill local">nur Gerät</span></td><td>Ankunfts-Benachrichtigungen (Geofencing)</td></tr>
+          <tr><td>Fotos eigener Sights</td><td><span class="pill">Server</span></td><td>Anzeige für dich &amp; andere Nutzer</td></tr>
+          <tr><td>Sprachaufnahmen</td><td><span class="pill">Server</span></td><td>Wiedergabe der eigenen Erzählung</td></tr>
+          <tr><td>Selbstverfasste Texte</td><td><span class="pill">Server</span></td><td>Anzeige der Sehenswürdigkeit</td></tr>
+          <tr><td>Gerätekennung</td><td><span class="pill">Server</span></td><td>Eigene Beiträge bearbeiten/löschen, Missbrauchsschutz</td></tr>
+          <tr><td>Bewertungen</td><td><span class="pill">Server</span></td><td>Anzeige der Beliebtheit geteilter Sights</td></tr>
+          <tr><td>E-Mail (freiwillig)</td><td><span class="pill">Server / E-Mail</span></td><td>Antwort auf Feedback</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="clause" id="standort">
+    <span class="clause-num">§ 3</span>
+    <h2>Standortdaten</h2>
+    <p>Die App fragt beim ersten Start die Standortberechtigung ab, einschließlich der Berechtigung "Immer" (Hintergrund-Standort). Das ist notwendig, damit die App dich benachrichtigen kann, sobald du dich einer Sehenswürdigkeit näherst — auch wenn die App gerade nicht geöffnet ist ("Geofencing").</p>
+    <h3>Was tatsächlich passiert</h3>
+    <p>Dein Standort wird ausschließlich <strong>auf deinem Gerät</strong> ausgewertet: das Betriebssystem (iOS/Android) übernimmt die eigentliche Standortüberwachung nativ, die App selbst fragt ihn nur ab, um die nächstgelegene Sehenswürdigkeit zu bestimmen. Dein Standort wird zu keinem Zeitpunkt an den Server dieser App übertragen oder dort gespeichert.</p>
+    <p><strong>Rechtsgrundlage:</strong> Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) über die Systemberechtigung deines Geräts. Ohne diese Berechtigung funktioniert die Ankunfts-Benachrichtigung nicht, die App selbst bleibt aber nutzbar.</p>
+  </section>
+
+  <section class="clause" id="eigene-sights">
+    <span class="clause-num">§ 4</span>
+    <h2>Eigene Sehenswürdigkeiten ("Meine Sehenswürdigkeiten")</h2>
+    <p>Wenn du selbst eine Sehenswürdigkeit anlegst, kannst du einen Namen, eine Geschichte (Text und/oder Sprachaufnahme) sowie Fotos hinzufügen. Diese Inhalte werden automatisch an den Server übertragen, sobald du speicherst, damit andere Nutzer sie in ihrer Umgebung entdecken können — das lässt sich in den Einstellungen ("Deine Themen") wieder ausschalten, ohne bereits geteilte eigene Inhalte zu betreffen.</p>
+    <ul>
+      <li><strong>Fotos:</strong> werden komprimiert auf dem Server gespeichert und beim Ansehen der Sehenswürdigkeit ausgeliefert.</li>
+      <li><strong>Sprachaufnahme:</strong> deine eigene Stimme wird als Audiodatei gespeichert und anderen Nutzern beim Besuch der Sehenswürdigkeit vorgespielt.</li>
+      <li><strong>Text ohne eigene Aufnahme:</strong> wird serverseitig automatisch als synthetische Sprachausgabe vorgelesen (Text-zu-Sprache, ohne KI-Stimmklonierung einer echten Person).</li>
+      <li>Standortkoordinaten der Sehenswürdigkeit selbst (nicht dein eigener Standort) werden gespeichert, damit sie auf der Karte erscheint.</li>
+    </ul>
+    <p>Du kannst eigene Sehenswürdigkeiten jederzeit über "Meine Sehenswürdigkeiten" bearbeiten oder löschen — das entfernt sie auch vom Server.</p>
+  </section>
+
+  <section class="clause" id="geraetekennung">
+    <span class="clause-num">§ 5</span>
+    <h2>Gerätekennung (pseudonyme Kennung)</h2>
+    <p>Beim ersten Start erzeugt die App eine zufällige, rein technische Kennung, die auf deinem Gerät gespeichert bleibt. Sie ist nicht mit deinem Namen, deiner E-Mail-Adresse oder einem Konto verknüpft. Zweck:</p>
+    <ul>
+      <li>Damit nur du deine eigenen geteilten Sehenswürdigkeiten bearbeiten oder löschen kannst.</li>
+      <li>Um zu verhindern, dass ein einzelnes Gerät die App durch massenhafte Beiträge überlastet (Missbrauchsschutz/Ratenbegrenzung).</li>
+      <li>Um doppelte Bewertungen desselben Geräts für dieselbe Sehenswürdigkeit zu erkennen.</li>
+    </ul>
+    <p><strong>Rechtsgrundlage:</strong> berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO) an einer funktionierenden, missbrauchsfreien Plattform.</p>
+  </section>
+
+  <section class="clause" id="bewertungen">
+    <span class="clause-num">§ 6</span>
+    <h2>Bewertungen &amp; Meldungen</h2>
+    <p>Du kannst geteilte Sehenswürdigkeiten anderer Nutzer bewerten (Daumen hoch/runter) oder unangemessene Inhalte melden. Beides wird ausschließlich über deine Gerätekennung gespeichert, nicht mit weiteren persönlichen Angaben.</p>
+  </section>
+
+  <section class="clause" id="ki">
+    <span class="clause-num">§ 7</span>
+    <h2>KI-gestützte Einordnung &amp; Moderation</h2>
+    <p>Von dir geteilte Texte werden automatisch passenden Themen-Kategorien zugeordnet (z. B. "Geschichte &amp; Kultur", "Natur") und können bei einer Meldung durch andere Nutzer automatisiert auf offensichtlich unangemessene Inhalte geprüft werden. Diese Auswertung läuft auf einem selbst betriebenen Server ohne Weitergabe an einen externen KI-Anbieter — deine Texte verlassen dafür keine vom Verantwortlichen kontrollierte Infrastruktur.</p>
+  </section>
+
+  <section class="clause" id="feedback">
+    <span class="clause-num">§ 8</span>
+    <h2>Feedback-Formular</h2>
+    <p>Wenn du über die App Feedback sendest, kannst du freiwillig eine E-Mail-Adresse angeben, falls du eine Antwort möchtest. Ohne diese Angabe ist keine Rückmeldung möglich, das Feedback wird aber trotzdem angenommen.</p>
+    <p><strong>Rechtsgrundlage:</strong> Einwilligung durch aktives Ausfüllen und Absenden (Art. 6 Abs. 1 lit. a DSGVO).</p>
+  </section>
+
+  <section class="clause" id="empfaenger">
+    <span class="clause-num">§ 9</span>
+    <h2>Empfänger &amp; Dritte</h2>
+    <p>Es findet grundsätzlich keine Weitergabe deiner Inhalte an Werbenetzwerke, Analysedienste oder Datenhändler statt. Folgende technischen Dienstleister sind an der Bereitstellung beteiligt:</p>
+    <ul>
+      <li><strong>Cloudflare</strong> (Cloudflare, Inc.) — leitet die verschlüsselte Verbindung zwischen der App und dem eigenen Server technisch weiter (Tunnel-Dienst). Cloudflare hat als Infrastrukturanbieter grundsätzlich Zugriff auf den Datenverkehr, wertet ihn nach unserer Kenntnis aber nicht inhaltlich aus.</li>
+      <li><strong>OpenStreetMap-Mitwirkende / Nominatim</strong> — zur Anzeige der Kartenausschnitte und Ermittlung von Stadt-/Gemeindegrenzen; hierbei werden keine personenbezogenen Nutzerdaten übermittelt.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="speicherdauer">
+    <span class="clause-num">§ 10</span>
+    <h2>Speicherdauer</h2>
+    <div class="fact-table-wrap">
+      <table class="fact-table">
+        <thead><tr><th>Datenart</th><th>Speicherdauer</th></tr></thead>
+        <tbody>
+          <tr><td>Standort</td><td>nicht gespeichert (nur momentane Auswertung auf dem Gerät)</td></tr>
+          <tr><td>Eigene Sehenswürdigkeiten (Text/Foto/Audio)</td><td>bis zur Löschung durch dich</td></tr>
+          <tr><td>Gerätekennung</td><td>bis zur Deinstallation der App</td></tr>
+          <tr><td>Bewertungen/Meldungen</td><td>bis zur Löschung der zugehörigen Sehenswürdigkeit</td></tr>
+          <tr><td>Feedback inkl. E-Mail</td><td>bis zur Bearbeitung, danach zeitnahe Löschung</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="clause" id="rechte">
+    <span class="clause-num">§ 11</span>
+    <h2>Deine Rechte</h2>
+    <p>Dir stehen nach der DSGVO folgende Rechte zu:</p>
+    <ul>
+      <li>Auskunft über die zu dir gespeicherten Daten (Art. 15 DSGVO)</li>
+      <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+      <li>Löschung ("Recht auf Vergessenwerden", Art. 17 DSGVO)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+    </ul>
+    <p>Da die App ohne Konto arbeitet, lassen sich eigene Sehenswürdigkeiten direkt in der App löschen — für alle anderen Anliegen wende dich an die Kontaktadresse in § 1.</p>
+  </section>
+
+  <section class="clause" id="widerruf">
+    <span class="clause-num">§ 12</span>
+    <h2>Widerruf &amp; Löschung</h2>
+    <p>Die Standortberechtigung kannst du jederzeit in den Systemeinstellungen deines Geräts entziehen. Eigene Sehenswürdigkeiten (inkl. Foto, Audio, Text) löschst du über "Meine Sehenswürdigkeiten" in der App — dies entfernt sie auch vom Server. Für die Löschung deiner Gerätekennung genügt die Deinstallation der App.</p>
+  </section>
+
+  <section class="clause" id="kinder">
+    <span class="clause-num">§ 13</span>
+    <h2>Minderjährige</h2>
+    <p>Die App richtet sich nicht gezielt an Kinder unter 16 Jahren. Nutzer unter 16 Jahren sollten die App nur mit Zustimmung der Erziehungsberechtigten verwenden, insbesondere im Hinblick auf das Teilen eigener Fotos, Aufnahmen und Texte mit anderen Nutzern.</p>
+  </section>
+
+  <section class="clause" id="aenderungen">
+    <span class="clause-num">§ 14</span>
+    <h2>Änderungen dieser Erklärung</h2>
+    <p>Diese Datenschutzerklärung wird angepasst, sobald sich die Funktionsweise der App ändert (z. B. neue Datenarten, neue Dienstleister). Die jeweils aktuelle Fassung ist über diese Seite abrufbar; das Datum oben zeigt den letzten Stand.</p>
+  </section>
+
+  <footer class="doc-foot">
+    Stadtgeflüster — Datenschutzerklärung, Entwurfsstand 17.09.2026.
+  </footer>
+</div>
