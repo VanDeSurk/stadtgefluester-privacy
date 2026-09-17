@@ -1,0 +1,104 @@
+<title>Stadtgeflüster Impressum</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #f5f6f3;
+    --surface: #ffffff;
+    --text: #20241f;
+    --text-muted: #5b655c;
+    --rule: #dcdfd8;
+    --accent: #2f6b5e;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141815;
+      --surface: #1b201c;
+      --text: #e8ebe6;
+      --text-muted: #a3ac9f;
+      --rule: #333a34;
+      --accent: #7cc2ae;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141815;
+    --surface: #1b201c;
+    --text: #e8ebe6;
+    --text-muted: #a3ac9f;
+    --rule: #333a34;
+    --accent: #7cc2ae;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 0 16px;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-block: 48px 80px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(28px, 5vw, 40px);
+    margin: 8px 0 24px;
+    text-wrap: balance;
+  }
+  h2 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 28px 0 8px;
+  }
+  p { margin: 0 0 12px; max-width: 66ch; }
+  a { color: var(--accent); }
+  footer.doc-foot {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+</style>
+
+<div class="page">
+  <div class="eyebrow">Impressum</div>
+  <h1>Stadtgeflüster</h1>
+
+  <h2>Angaben gemäß § 18 Abs. 1 Medienstaatsvertrag (MStV)</h2>
+  <p>
+    Patrick Schweers<br>
+    Lange Fohre 4<br>
+    46399 Bocholt<br>
+    Deutschland
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>E-Mail: p.s.schweers@gmail.com</p>
+
+  <h2>Verantwortlich für den Inhalt</h2>
+  <p>Patrick Schweers (Anschrift wie oben).</p>
+
+  <h2>Art des Angebots</h2>
+  <p>Stadtgeflüster ist ein nicht-kommerzielles Einzelprojekt (kostenlose App ohne Werbung, ohne In-App-Käufe). Es handelt sich um kein journalistisch-redaktionelles Angebot im Sinne des § 18 Abs. 2 MStV.</p>
+
+  <footer class="doc-foot">
+    Stadtgeflüster — Impressum. Siehe auch die <a href="/">Datenschutzerklärung</a>.
+  </footer>
+</div>
